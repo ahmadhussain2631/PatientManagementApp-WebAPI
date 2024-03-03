@@ -16,7 +16,7 @@ public class AppDbContext : DbContext
         base.OnModelCreating(modelBuilder);
     }
 
-    public DbSet<Patient> Patient { get; set; }
+    public DbSet<Patient> Patients { get; set; }
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Disease> Diseases { get; set; }
     public DbSet<PatientVisit> PatientVisits { get; set; }
