@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Domain.Entities;
+namespace Domain.Models;
 
-[Table(name: "PatientDiseases")]
 public class PatientDisease
 {
     public int Id { get; set; }

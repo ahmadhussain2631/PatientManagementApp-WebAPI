@@ -14,11 +14,6 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
-        //modelBuilder.Entity<User>(entity =>
-        //{
-        //    entity.HasIndex(e => e.Username).IsUnique();
-        //});
     }
 
     public DbSet<Patient> Patient { get; set; }

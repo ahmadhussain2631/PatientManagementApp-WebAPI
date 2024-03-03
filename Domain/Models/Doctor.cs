@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Domain.Entities;
-
-[Table(name: "Diseases")]
-public class Disease
+namespace Domain.Models;
+public class Doctor
 {
     public int Id { get; set; }
-    [Column(TypeName = "VARCHAR(250)")]
     public string Name { get; set; }
+    public string Specialization { get; set; }
 }
