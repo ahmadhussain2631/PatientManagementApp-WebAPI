@@ -1,14 +1,18 @@
 using Domain.MappingProfile;
+using WebAPI.DependencyRegister;
 
 var builder = WebApplication.CreateBuilder(args);
-
+IConfiguration configuration = builder.Configuration;
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddBusinessServices();
+builder.Services.AddRepositories();
+builder.Services.AddSqlDbContext(configuration);
 
 var app = builder.Build();
 

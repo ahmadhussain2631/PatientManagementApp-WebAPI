@@ -6,10 +6,10 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PatientController : ControllerBase
+    public class DoctorController : ControllerBase
     {
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] Patient patient)
+        public async Task<IActionResult> Add([FromBody] Doctor doctor)
         {
             return Ok("");
         }
