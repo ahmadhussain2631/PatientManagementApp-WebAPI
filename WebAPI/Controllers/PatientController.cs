@@ -14,6 +14,7 @@ namespace WebAPI.Controllers
             _patientService = patientService;
         }
 
+        [Route("Add")]
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] Patient patient)
         {
@@ -25,6 +26,21 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> Get([FromRoute] int patientId)
         {
             return Ok(await _patientService.Get(patientId));
+        }
+
+        [Route("GetAll")]
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _patientService.GetAll());
+        }
+
+        [Route("Delete/{id:int}")]
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            await _patientService.Delete(id);
+            return Ok("Record deleted successfully");
         }
     }
 }

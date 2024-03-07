@@ -11,6 +11,6 @@ public class Patient
     public string Address { get; set; }
     public string PhoneNumber { get; set; }
 
-    public List<PatientDisease> Diseases { get; set; }
-    public List<PatientVisit> Visits { get; set; }
+    public List<PatientDisease>? Diseases { get; set; }
+    public List<PatientVisit>? Visits { get; set; }
 }
